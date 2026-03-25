@@ -1,0 +1,733 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Heritage Digital Tech</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+   <link rel="stylesheet" href="/src/style.css" />
+<link rel="stylesheet" href="/src/polish.css" />
+  </head>
+
+  <body>
+    <!-- Loading Screen -->
+<div id="loader">
+  <div class="loader-logo">HDT</div>
+  <div class="loader-bar-wrap">
+    <div class="loader-bar"></div>
+  </div>
+</div>
+    <!-- Custom Cursor -->
+    <div id="cursor-glow"></div>
+    <div id="cursor-trail"></div>
+
+    <!-- Navbar -->
+    <nav id="navbar">
+      <div class="nav-logo">HDT</div>
+      <ul class="nav-links">
+        <li><a href="#hero">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <button id="theme-toggle" aria-label="Toggle dark mode">🌙</button>
+    </nav>
+
+    <!-- ═══════════════════════════════════════ -->
+    <!--  HERO SECTION                          -->
+    <!-- ═══════════════════════════════════════ -->
+    <section id="hero">
+  <canvas id="hero-canvas"></canvas>
+
+  <div class="hero-content">
+    <p class="hero-eyebrow">Welcome to</p>
+    <h1 class="hero-name">Heritage<br />Digital Tech</h1>
+
+    <div class="hero-title-badge">
+      <span class="badge-dot"></span>
+      Front-End &amp; 3D Web Developer
+      <span class="badge-dot"></span>
+    </div>
+
+    <p class="hero-tagline">
+      Building immersive, interactive, and visually stunning web experiences —
+      remotely, for clients across the globe.
+    </p>
+
+    <div class="hero-cta-group">
+      <a href="#projects" class="btn btn-primary">View My Work</a>
+      <a href="#contact" class="btn btn-outline">Let's Connect</a>
+    </div>
+  </div>
+
+  <!-- 3D Computer Illustration -->
+  <div class="hero-3d-computer" id="hero-computer">
+    <div class="computer-monitor">
+      <div class="monitor-screen">
+        <div class="screen-header">
+          <span class="dot red"></span>
+          <span class="dot yellow"></span>
+          <span class="dot green"></span>
+          <span class="file-name">heritage.js</span>
+        </div>
+        <div class="code-lines">
+          <div class="code-line"><span class="code-num">1</span><span class="kw">const</span> <span class="fn">Heritage</span> = () => {</div>
+          <div class="code-line"><span class="code-num">2</span>&nbsp;&nbsp;<span class="kw">return</span> {</div>
+          <div class="code-line"><span class="code-num">3</span>&nbsp;&nbsp;&nbsp;&nbsp;name: <span class="str">"Heritage Digital Tech"</span>,</div>
+          <div class="code-line"><span class="code-num">4</span>&nbsp;&nbsp;&nbsp;&nbsp;role: <span class="str">"Front-End &amp; 3D Dev"</span>,</div>
+          <div class="code-line"><span class="code-num">5</span>&nbsp;&nbsp;&nbsp;&nbsp;skills: [<span class="str">"HTML"</span>, <span class="str">"CSS"</span>,</div>
+          <div class="code-line"><span class="code-num">6</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="str">"JavaScript"</span>, <span class="str">"Three.js"</span>],</div>
+          <div class="code-line"><span class="code-num">7</span>&nbsp;&nbsp;&nbsp;&nbsp;remote: <span class="bool">true</span>,</div>
+          <div class="code-line"><span class="code-num">8</span>&nbsp;&nbsp;&nbsp;&nbsp;available: <span class="bool">true</span>,</div>
+          <div class="code-line"><span class="code-num">9</span>&nbsp;&nbsp;};</div>
+          <div class="code-line"><span class="code-num">10</span>};</div>
+          <div class="code-line blink-line"><span class="code-num">11</span><span class="cursor-blink">▌</span></div>
+        </div>
+      </div>
+      <div class="monitor-stand-neck"></div>
+      <div class="monitor-stand-base"></div>
+    </div>
+    <div class="computer-glow"></div>
+  </div>
+
+  <div class="scroll-indicator">
+    <span>Scroll</span>
+    <div class="scroll-line"></div>
+  </div>
+</section>
+    <!-- ═══════════════════════════════════════ -->
+    <!--  ABOUT SECTION                         -->
+    <!-- ═══════════════════════════════════════ -->
+    <section id="about">
+  <canvas class="section-canvas" id="about-canvas"></canvas>
+
+  <div class="section-banner">
+    <h2 class="banner-text">About Me</h2>
+  </div>
+
+  <div class="about-container">
+
+    <!-- Left: Code card replacing photo -->
+    <div class="about-visual">
+      <div class="about-code-card">
+        <div class="code-card-header">
+          <span class="dot red"></span>
+          <span class="dot yellow"></span>
+          <span class="dot green"></span>
+          <span class="file-name">about.json</span>
+        </div>
+        <div class="about-json">
+          <p><span class="kw">{</span></p>
+          <p>&nbsp;&nbsp;<span class="str">"name"</span>: <span class="fn">"Heritage Digital Tech"</span>,</p>
+          <p>&nbsp;&nbsp;<span class="str">"title"</span>: <span class="fn">"Front-End &amp; 3D Developer"</span>,</p>
+          <p>&nbsp;&nbsp;<span class="str">"focus"</span>: [</p>
+          <p>&nbsp;&nbsp;&nbsp;&nbsp;<span class="fn">"Interactive Interfaces"</span>,</p>
+          <p>&nbsp;&nbsp;&nbsp;&nbsp;<span class="fn">"3D Web Experiences"</span>,</p>
+          <p>&nbsp;&nbsp;&nbsp;&nbsp;<span class="fn">"Motion &amp; Animation"</span>,</p>
+          <p>&nbsp;&nbsp;&nbsp;&nbsp;<span class="fn">"Remote Collaboration"</span></p>
+          <p>&nbsp;&nbsp;],</p>
+          <p>&nbsp;&nbsp;<span class="str">"remote"</span>: <span class="bool">true</span>,</p>
+          <p>&nbsp;&nbsp;<span class="str">"available"</span>: <span class="bool">true</span></p>
+          <p><span class="kw">}</span></p>
+        </div>
+      </div>
+      <div class="about-badge">🌍 Available for Remote Work</div>
+    </div>
+
+    <!-- Right: Text content -->
+    <div class="about-text">
+      <h3>I'm a <span class="gold">Front-End &amp; 3D Web Developer</span></h3>
+
+      <p>
+        At Heritage Digital Tech, I specialise in crafting interactive,
+        modern, and visually engaging web experiences. I combine strong
+        foundations in <span class="gold">HTML</span>, <span class="gold">CSS</span>,
+        and <span class="gold">JavaScript</span> with advanced tools like
+        <span class="gold">Three.js</span> and <span class="gold">GSAP</span>
+        to build 3D interfaces and fluid animations that captivate users
+        from the first scroll.
+      </p>
+
+      <p>
+        My work sits at the intersection of design and engineering — I think
+        deeply about performance, accessibility, and user experience while
+        pushing the boundaries of what the browser can render. Whether it's
+        a sleek landing page, a WebGL-powered product showcase, or a complex
+        interactive dashboard, I bring precision and creativity to every project.
+      </p>
+
+      <p>
+        I work fully remotely with teams and clients across the globe,
+        delivering high-quality front-end solutions with clear communication
+        and reliable timelines.
+      </p>
+
+      <p class="available-line">
+        <span class="availability-dot"></span>
+        Available for remote opportunities.
+      </p>
+
+      <div class="about-stats">
+        <div class="stat">
+          <span class="stat-number gold">50+</span>
+          <span class="stat-label">Projects Delivered</span>
+        </div>
+        <div class="stat">
+          <span class="stat-number gold">30+</span>
+          <span class="stat-label">Happy Clients</span>
+        </div>
+        <div class="stat">
+          <span class="stat-number gold">100%</span>
+          <span class="stat-label">Remote Ready</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+    <!-- ═══════════════════════════════════════ -->
+    <!--  SKILLS SECTION                        -->
+    <!-- ═══════════════════════════════════════ -->
+    <section id="skills">
+      <canvas class="section-canvas" id="skills-canvas"></canvas>
+
+      <div class="section-banner">
+        <h2 class="banner-text">My Skills</h2>
+      </div>
+
+      <div class="skills-grid">
+        <!-- Each card has a front and back face -->
+        <div class="flip-card" data-tilt>
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <div class="skill-icon">⚡</div>
+              <h3>HTML & CSS</h3>
+              <p>Semantic, accessible markup</p>
+            </div>
+            <div class="flip-card-back">
+              <h3>HTML & CSS</h3>
+              <ul>
+                <li>Semantic HTML5</li>
+                <li>CSS Grid & Flexbox</li>
+                <li>Responsive Design</li>
+                <li>CSS Animations</li>
+              </ul>
+              <div class="skill-level">Expert</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="flip-card" data-tilt>
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <div class="skill-icon">🚀</div>
+              <h3>JavaScript</h3>
+              <p>Modern ES6+ development</p>
+            </div>
+            <div class="flip-card-back">
+              <h3>JavaScript</h3>
+              <ul>
+                <li>ES6+ Features</li>
+                <li>DOM Manipulation</li>
+                <li>Async / Await</li>
+                <li>API Integration</li>
+              </ul>
+              <div class="skill-level">Advanced</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="flip-card" data-tilt>
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <div class="skill-icon">⚛️</div>
+              <h3>React</h3>
+              <p>Component-based UIs</p>
+            </div>
+            <div class="flip-card-back">
+              <h3>React</h3>
+              <ul>
+                <li>Hooks & Context</li>
+                <li>State Management</li>
+                <li>Next.js</li>
+                <li>Component Design</li>
+              </ul>
+              <div class="skill-level">Advanced</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="flip-card" data-tilt>
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <div class="skill-icon">🎨</div>
+              <h3>UI/UX Design</h3>
+              <p>User-centred interfaces</p>
+            </div>
+            <div class="flip-card-back">
+              <h3>UI/UX Design</h3>
+              <ul>
+                <li>Figma</li>
+                <li>Wireframing</li>
+                <li>Prototyping</li>
+                <li>Design Systems</li>
+              </ul>
+              <div class="skill-level">Proficient</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="flip-card" data-tilt>
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <div class="skill-icon">🌐</div>
+              <h3>Node.js</h3>
+              <p>Backend & API development</p>
+            </div>
+            <div class="flip-card-back">
+              <h3>Node.js</h3>
+              <ul>
+                <li>Express.js</li>
+                <li>REST APIs</li>
+                <li>MongoDB</li>
+                <li>Authentication</li>
+              </ul>
+              <div class="skill-level">Intermediate</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="flip-card" data-tilt>
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <div class="skill-icon">☁️</div>
+              <h3>Cloud & DevOps</h3>
+              <p>Deployment & hosting</p>
+            </div>
+            <div class="flip-card-back">
+              <h3>Cloud & DevOps</h3>
+              <ul>
+                <li>Git & GitHub</li>
+                <li>Vercel / Netlify</li>
+                <li>CI/CD Pipelines</li>
+                <li>Docker Basics</li>
+              </ul>
+              <div class="skill-level">Intermediate</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════ -->
+<!--  PROJECTS SECTION                      -->
+<!-- ═══════════════════════════════════════ -->
+<section id="projects">
+  <canvas class="section-canvas" id="projects-canvas"></canvas>
+
+  <div class="section-banner">
+    <h2 class="banner-text">My Projects</h2>
+  </div>
+
+  <!-- Floating Marquee Banner Row 1 (left scroll) -->
+  <div class="marquee-wrapper">
+    <div class="marquee-track" id="marquee-1">
+
+      <div class="float-card">
+        <div class="float-card-icon">🌐</div>
+        <div class="float-card-body">
+          <h3>Landing Page</h3>
+          <p>Animated, responsive landing page with hero section, smooth scroll, and mobile-first design.</p>
+          <div class="project-tags">
+            <span>HTML</span><span>CSS</span><span>JavaScript</span>
+          </div>
+        </div>
+        <div class="float-card-footer">
+          <a href="#" class="btn btn-primary">View Project</a>
+          <span class="coming-badge">Coming Soon</span>
+        </div>
+      </div>
+
+      <div class="float-card">
+        <div class="float-card-icon">🎨</div>
+        <div class="float-card-body">
+          <h3>Portfolio Template</h3>
+          <p>Clean portfolio layout with dark mode toggle, CSS grid, and animated section reveals.</p>
+          <div class="project-tags">
+            <span>HTML</span><span>CSS</span><span>GSAP</span>
+          </div>
+        </div>
+        <div class="float-card-footer">
+          <a href="#" class="btn btn-primary">View Project</a>
+          <span class="coming-badge">Coming Soon</span>
+        </div>
+      </div>
+
+      <div class="float-card">
+        <div class="float-card-icon">🛒</div>
+        <div class="float-card-body">
+          <h3>Product Showcase</h3>
+          <p>Interactive product display page with image gallery, filter tabs, and hover animations.</p>
+          <div class="project-tags">
+            <span>HTML</span><span>CSS</span><span>JavaScript</span>
+          </div>
+        </div>
+        <div class="float-card-footer">
+          <a href="#" class="btn btn-primary">View Project</a>
+          <span class="coming-badge">Coming Soon</span>
+        </div>
+      </div>
+
+      <div class="float-card">
+        <div class="float-card-icon">☁️</div>
+        <div class="float-card-body">
+          <h3>Weather App</h3>
+          <p>Real-time weather dashboard fetching live data from an API with animated weather icons.</p>
+          <div class="project-tags">
+            <span>JavaScript</span><span>API</span><span>CSS</span>
+          </div>
+        </div>
+        <div class="float-card-footer">
+          <a href="#" class="btn btn-primary">View Project</a>
+          <span class="coming-badge">Coming Soon</span>
+        </div>
+      </div>
+
+      <!-- Duplicate for seamless loop -->
+      <div class="float-card">
+        <div class="float-card-icon">🌐</div>
+        <div class="float-card-body">
+          <h3>Landing Page</h3>
+          <p>Animated, responsive landing page with hero section, smooth scroll, and mobile-first design.</p>
+          <div class="project-tags">
+            <span>HTML</span><span>CSS</span><span>JavaScript</span>
+          </div>
+        </div>
+        <div class="float-card-footer">
+          <a href="#" class="btn btn-primary">View Project</a>
+          <span class="coming-badge">Coming Soon</span>
+        </div>
+      </div>
+
+      <div class="float-card">
+        <div class="float-card-icon">🎨</div>
+        <div class="float-card-body">
+          <h3>Portfolio Template</h3>
+          <p>Clean portfolio layout with dark mode toggle, CSS grid, and animated section reveals.</p>
+          <div class="project-tags">
+            <span>HTML</span><span>CSS</span><span>GSAP</span>
+          </div>
+        </div>
+        <div class="float-card-footer">
+          <a href="#" class="btn btn-primary">View Project</a>
+          <span class="coming-badge">Coming Soon</span>
+        </div>
+      </div>
+
+      <div class="float-card">
+        <div class="float-card-icon">🛒</div>
+        <div class="float-card-body">
+          <h3>Product Showcase</h3>
+          <p>Interactive product display page with image gallery, filter tabs, and hover animations.</p>
+          <div class="project-tags">
+            <span>HTML</span><span>CSS</span><span>JavaScript</span>
+          </div>
+        </div>
+        <div class="float-card-footer">
+          <a href="#" class="btn btn-primary">View Project</a>
+          <span class="coming-badge">Coming Soon</span>
+        </div>
+      </div>
+
+      <div class="float-card">
+        <div class="float-card-icon">☁️</div>
+        <div class="float-card-body">
+          <h3>Weather App</h3>
+          <p>Real-time weather dashboard fetching live data from an API with animated weather icons.</p>
+          <div class="project-tags">
+            <span>JavaScript</span><span>API</span><span>CSS</span>
+          </div>
+        </div>
+        <div class="float-card-footer">
+          <a href="#" class="btn btn-primary">View Project</a>
+          <span class="coming-badge">Coming Soon</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Floating Marquee Banner Row 2 (right scroll) -->
+  <div class="marquee-wrapper marquee-reverse">
+    <div class="marquee-track" id="marquee-2">
+
+      <div class="float-card float-card--outline">
+        <div class="float-card-icon">📋</div>
+        <div class="float-card-body">
+          <h3>Task Manager UI</h3>
+          <p>Drag-and-drop task board with local storage, priority labels, and smooth card animations.</p>
+          <div class="project-tags">
+            <span>JavaScript</span><span>CSS</span><span>LocalStorage</span>
+          </div>
+        </div>
+        <div class="float-card-footer">
+          <a href="#" class="btn btn-primary">View Project</a>
+          <span class="coming-badge">Coming Soon</span>
+        </div>
+      </div>
+
+      <div class="float-card float-card--outline">
+        <div class="float-card-icon">🎬</div>
+        <div class="float-card-body">
+          <h3>3D Hero Section</h3>
+          <p>Full-screen hero with Three.js floating shapes, particle system, and parallax mouse effect.</p>
+          <div class="project-tags">
+            <span>Three.js</span><span>GSAP</span><span>JavaScript</span>
+          </div>
+        </div>
+        <div class="float-card-footer">
+          <a href="#" class="btn btn-primary">View Project</a>
+          <span class="coming-badge">Coming Soon</span>
+        </div>
+      </div>
+
+      <div class="float-card float-card--outline">
+        <div class="float-card-icon">📊</div>
+        <div class="float-card-body">
+          <h3>Dashboard UI</h3>
+          <p>Admin dashboard layout with responsive sidebar, chart placeholders, and card components.</p>
+          <div class="project-tags">
+            <span>HTML</span><span>CSS</span><span>JavaScript</span>
+          </div>
+        </div>
+        <div class="float-card-footer">
+          <a href="#" class="btn btn-primary">View Project</a>
+          <span class="coming-badge">Coming Soon</span>
+        </div>
+      </div>
+
+      <div class="float-card float-card--outline">
+        <div class="float-card-icon">✍️</div>
+        <div class="float-card-body">
+          <h3>Blog Layout</h3>
+          <p>Editorial blog design with reading progress bar, dark mode, and animated post cards.</p>
+          <div class="project-tags">
+            <span>HTML</span><span>CSS</span><span>JavaScript</span>
+          </div>
+        </div>
+        <div class="float-card-footer">
+          <a href="#" class="btn btn-primary">View Project</a>
+          <span class="coming-badge">Coming Soon</span>
+        </div>
+      </div>
+
+      <!-- Duplicate for seamless loop -->
+      <div class="float-card float-card--outline">
+        <div class="float-card-icon">📋</div>
+        <div class="float-card-body">
+          <h3>Task Manager UI</h3>
+          <p>Drag-and-drop task board with local storage, priority labels, and smooth card animations.</p>
+          <div class="project-tags">
+            <span>JavaScript</span><span>CSS</span><span>LocalStorage</span>
+          </div>
+        </div>
+        <div class="float-card-footer">
+          <a href="#" class="btn btn-primary">View Project</a>
+          <span class="coming-badge">Coming Soon</span>
+        </div>
+      </div>
+
+      <div class="float-card float-card--outline">
+        <div class="float-card-icon">🎬</div>
+        <div class="float-card-body">
+          <h3>3D Hero Section</h3>
+          <p>Full-screen hero with Three.js floating shapes, particle system, and parallax mouse effect.</p>
+          <div class="project-tags">
+            <span>Three.js</span><span>GSAP</span><span>JavaScript</span>
+          </div>
+        </div>
+        <div class="float-card-footer">
+          <a href="#" class="btn btn-primary">View Project</a>
+          <span class="coming-badge">Coming Soon</span>
+        </div>
+      </div>
+
+      <div class="float-card float-card--outline">
+        <div class="float-card-icon">📊</div>
+        <div class="float-card-body">
+          <h3>Dashboard UI</h3>
+          <p>Admin dashboard layout with responsive sidebar, chart placeholders, and card components.</p>
+          <div class="project-tags">
+            <span>HTML</span><span>CSS</span><span>JavaScript</span>
+          </div>
+        </div>
+        <div class="float-card-footer">
+          <a href="#" class="btn btn-primary">View Project</a>
+          <span class="coming-badge">Coming Soon</span>
+        </div>
+      </div>
+
+      <div class="float-card float-card--outline">
+        <div class="float-card-icon">✍️</div>
+        <div class="float-card-body">
+          <h3>Blog Layout</h3>
+          <p>Editorial blog design with reading progress bar, dark mode, and animated post cards.</p>
+          <div class="project-tags">
+            <span>HTML</span><span>CSS</span><span>JavaScript</span>
+          </div>
+        </div>
+        <div class="float-card-footer">
+          <a href="#" class="btn btn-primary">View Project</a>
+          <span class="coming-badge">Coming Soon</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <p class="projects-note">
+    🚧 &nbsp;More projects coming soon — currently in development.
+  </p>
+
+</section>
+
+    <!-- ═══════════════════════════════════════ -->
+    <!--  CONTACT SECTION                       -->
+    <!-- ═══════════════════════════════════════ -->
+    <section id="contact">
+      <canvas class="section-canvas" id="contact-canvas"></canvas>
+
+      <div class="section-banner">
+        <h2 class="banner-text">Get In Touch</h2>
+      </div>
+
+      <div class="contact-container">
+        <div class="contact-form-wrap">
+          <form id="contact-form">
+            <div class="form-group">
+              <input type="text" id="name" placeholder=" " required />
+              <label for="name">Your Name</label>
+            </div>
+            <div class="form-group">
+              <input type="email" id="email" placeholder=" " required />
+              <label for="email">Your Email</label>
+            </div>
+            <div class="form-group">
+              <textarea id="message" rows="5" placeholder=" " required></textarea>
+              <label for="message">Your Message</label>
+            </div>
+            <button type="submit" class="btn btn-primary btn-full">
+              Send Message 🚀
+            </button>
+          </form>
+        </div>
+
+        <div class="contact-info">
+          <h3>Let's work <span class="gold">together</span></h3>
+          <p>Available for remote freelance projects, full-time remote roles, and long-term collaborations worldwide.</p>
+
+          <div class="social-icons">
+  <a href="https://github.com/Kingplanet2" target="_blank" class="social-icon" aria-label="GitHub">
+    <svg viewBox="0 0 24 24" fill="currentColor">
+      <path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.385-1.335-1.755-1.335-1.755-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 21.795 24 17.295 24 12c0-6.63-5.37-12-12-12z"/>
+    </svg>
+  </a>
+
+  <a href="https://x.com/ichie_big?s=21" target="_blank" class="social-icon" aria-label="Twitter / X">
+    <svg viewBox="0 0 24 24" fill="currentColor">
+      <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.737-8.835L1.254 2.25H8.08l4.253 5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+    </svg>
+  </a>
+
+  <a href="https://www.instagram.com/lion.1290879?igsh=NzM0MGxnNjRvY2N1&utm_source=qr" target="_blank" class="social-icon" aria-label="Instagram">
+    <svg viewBox="0 0 24 24" fill="currentColor">
+      <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/>
+    </svg>
+  </a>
+
+  <a href="mailto:heritagedigitaltech@gmail.com" class="social-icon" aria-label="Email">
+    <svg viewBox="0 0 24 24" fill="currentColor">
+      <path d="M24 5.457v13.909c0 .904-.732 1.636-1.636 1.636h-3.819V11.73L12 16.64l-6.545-4.91v9.273H1.636A1.636 1.636 0 0 1 0 19.366V5.457c0-2.023 2.309-3.178 3.927-1.964L5.455 4.64 12 9.548l6.545-4.91 1.528-1.145C21.69 2.28 24 3.434 24 5.457z"/>
+    </svg>
+  </a>
+
+  <a href="#" class="social-icon social-icon--linkedin-placeholder" aria-label="LinkedIn" title="LinkedIn — Coming Soon">
+    <svg viewBox="0 0 24 24" fill="currentColor">
+      <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 23.997 23.227 23.997 22.271V1.729C23.997.774 23.2 0 22.222 0h.003z"/>
+    </svg>
+  </a>
+</div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="footer">
+  <div class="footer-inner">
+
+    <div class="footer-brand">
+      <span class="nav-logo">HDT</span>
+      <p>Heritage Digital Tech — Front-End &amp; 3D Web Developer</p>
+      <p class="footer-tagline">Building immersive digital experiences, remotely &amp; globally.</p>
+    </div>
+
+    <div class="footer-socials">
+      <p class="footer-socials-label">Find me online</p>
+      <div class="footer-social-row">
+
+        <a href="https://github.com/Kingplanet2" target="_blank" class="footer-social-link" aria-label="GitHub">
+          <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18">
+            <path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.385-1.335-1.755-1.335-1.755-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 21.795 24 17.295 24 12c0-6.63-5.37-12-12-12z"/>
+          </svg>
+          GitHub
+        </a>
+
+        <a href="https://x.com/ichie_big?s=21" target="_blank" class="footer-social-link" aria-label="Twitter / X">
+          <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18">
+            <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.737-8.835L1.254 2.25H8.08l4.253 5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+          </svg>
+          Twitter / X
+        </a>
+
+        <a href="https://www.instagram.com/lion.1290879?igsh=NzM0MGxnNjRvY2N1&utm_source=qr" target="_blank" class="footer-social-link" aria-label="Instagram">
+          <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18">
+            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/>
+          </svg>
+          Instagram
+        </a>
+
+        <a href="mailto:heritagedigitaltech@gmail.com" class="footer-social-link" aria-label="Email">
+          <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18">
+            <path d="M24 5.457v13.909c0 .904-.732 1.636-1.636 1.636h-3.819V11.73L12 16.64l-6.545-4.91v9.273H1.636A1.636 1.636 0 0 1 0 19.366V5.457c0-2.023 2.309-3.178 3.927-1.964L5.455 4.64 12 9.548l6.545-4.91 1.528-1.145C21.69 2.28 24 3.434 24 5.457z"/>
+          </svg>
+          Email
+        </a>
+
+        <a href="#" class="footer-social-link footer-social-link--soon" aria-label="LinkedIn" title="LinkedIn — Coming Soon">
+          <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18">
+            <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 23.997 23.227 23.997 22.271V1.729C23.997.774 23.2 0 22.222 0h.003z"/>
+          </svg>
+          LinkedIn
+          <span class="soon-tag">Soon</span>
+        </a>
+
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2025 <span class="gold">Heritage Digital Tech</span>. All rights reserved.</p>
+      <p>Crafted with passion · Available worldwide 🌍</p>
+    </div>
+
+  </div>
+</footer>
+    <!-- Particle Container -->
+    <div id="particles-container"></div>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
