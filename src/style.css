@@ -1258,3 +1258,93 @@ section {
   .footer-bottom { flex-direction: column; text-align: center; }
   .footer-social-row { gap: 0.6rem; }
 }
+
+/* ══════════════════════════════════════════
+   BOTTOM NAVBAR — Mobile only
+══════════════════════════════════════════ */
+.bottom-nav {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .bottom-nav {
+    display: flex;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 9000;
+    background: rgba(18, 18, 18, 0.95);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-top: 1px solid var(--border);
+    padding: 0.6rem 0 0.8rem;
+    justify-content: space-around;
+    align-items: center;
+    box-shadow: 0 -8px 30px rgba(0,0,0,0.4);
+  }
+
+  /* Push page content above bottom nav */
+  body { padding-bottom: 70px; }
+}
+
+.bottom-nav-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+  color: var(--grey);
+  text-decoration: none;
+  font-size: 0.65rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-weight: 500;
+  padding: 0.4rem 1.5rem;
+  border-radius: 12px;
+  transition: color 0.3s, background 0.3s, transform 0.3s;
+  position: relative;
+}
+
+.bottom-nav-item svg {
+  width: 22px;
+  height: 22px;
+  transition: transform 0.3s, stroke 0.3s;
+}
+
+.bottom-nav-item:hover,
+.bottom-nav-item.active {
+  color: var(--gold);
+}
+
+.bottom-nav-item:hover svg,
+.bottom-nav-item.active svg {
+  stroke: var(--gold);
+  transform: translateY(-2px);
+}
+
+/* Gold dot indicator on active */
+.bottom-nav-item.active::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--gold);
+  box-shadow: 0 0 6px var(--gold);
+}
+
+/* Projects button — gold highlight */
+.bottom-nav-item#bn-projects,
+.bottom-nav-item[href="/projects.html"] {
+  background: rgba(255, 215, 0, 0.08);
+  border: 1px solid rgba(255, 215, 0, 0.2);
+  color: var(--gold);
+}
+
+.bottom-nav-item#bn-projects svg,
+.bottom-nav-item[href="/projects.html"] svg {
+  stroke: var(--gold);
+}

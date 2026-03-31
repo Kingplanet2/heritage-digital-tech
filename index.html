@@ -38,7 +38,7 @@
         <li><a href="#hero">Home</a></li>
         <li><a href="#about">About</a></li>
         <li><a href="#skills">Skills</a></li>
-        <li><a href="#projects">Projects</a></li>
+        <li><a href="/projects.html">Projects</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
       <button id="theme-toggle" aria-label="Toggle dark mode">🌙</button>
@@ -331,278 +331,6 @@
     </section>
 
     <!-- ═══════════════════════════════════════ -->
-<!--  PROJECTS SECTION                      -->
-<!-- ═══════════════════════════════════════ -->
-<section id="projects">
-  <canvas class="section-canvas" id="projects-canvas"></canvas>
-
-  <div class="section-banner">
-    <h2 class="banner-text">My Projects</h2>
-  </div>
-
-  <!-- Floating Marquee Banner Row 1 (left scroll) -->
-  <div class="marquee-wrapper">
-    <div class="marquee-track" id="marquee-1">
-
-      <div class="float-card">
-        <div class="float-card-icon">🌐</div>
-        <div class="float-card-body">
-          <h3>Landing Page</h3>
-          <p>Animated, responsive landing page with hero section, smooth scroll, and mobile-first design.</p>
-          <div class="project-tags">
-            <span>HTML</span><span>CSS</span><span>JavaScript</span>
-          </div>
-        </div>
-        <div class="float-card-footer">
-          <a href="#" class="btn btn-primary">View Project</a>
-          <span class="coming-badge">Coming Soon</span>
-        </div>
-      </div>
-
-      <div class="float-card">
-        <div class="float-card-icon">🎨</div>
-        <div class="float-card-body">
-          <h3>Portfolio Template</h3>
-          <p>Clean portfolio layout with dark mode toggle, CSS grid, and animated section reveals.</p>
-          <div class="project-tags">
-            <span>HTML</span><span>CSS</span><span>GSAP</span>
-          </div>
-        </div>
-        <div class="float-card-footer">
-          <a href="#" class="btn btn-primary">View Project</a>
-          <span class="coming-badge">Coming Soon</span>
-        </div>
-      </div>
-
-      <div class="float-card">
-        <div class="float-card-icon">🛒</div>
-        <div class="float-card-body">
-          <h3>Product Showcase</h3>
-          <p>Interactive product display page with image gallery, filter tabs, and hover animations.</p>
-          <div class="project-tags">
-            <span>HTML</span><span>CSS</span><span>JavaScript</span>
-          </div>
-        </div>
-        <div class="float-card-footer">
-          <a href="#" class="btn btn-primary">View Project</a>
-          <span class="coming-badge">Coming Soon</span>
-        </div>
-      </div>
-
-      <div class="float-card">
-        <div class="float-card-icon">☁️</div>
-        <div class="float-card-body">
-          <h3>Weather App</h3>
-          <p>Real-time weather dashboard fetching live data from an API with animated weather icons.</p>
-          <div class="project-tags">
-            <span>JavaScript</span><span>API</span><span>CSS</span>
-          </div>
-        </div>
-        <div class="float-card-footer">
-          <a href="#" class="btn btn-primary">View Project</a>
-          <span class="coming-badge">Coming Soon</span>
-        </div>
-      </div>
-
-      <!-- Duplicate for seamless loop -->
-      <div class="float-card">
-        <div class="float-card-icon">🌐</div>
-        <div class="float-card-body">
-          <h3>Landing Page</h3>
-          <p>Animated, responsive landing page with hero section, smooth scroll, and mobile-first design.</p>
-          <div class="project-tags">
-            <span>HTML</span><span>CSS</span><span>JavaScript</span>
-          </div>
-        </div>
-        <div class="float-card-footer">
-          <a href="#" class="btn btn-primary">View Project</a>
-          <span class="coming-badge">Coming Soon</span>
-        </div>
-      </div>
-
-      <div class="float-card">
-        <div class="float-card-icon">🎨</div>
-        <div class="float-card-body">
-          <h3>Portfolio Template</h3>
-          <p>Clean portfolio layout with dark mode toggle, CSS grid, and animated section reveals.</p>
-          <div class="project-tags">
-            <span>HTML</span><span>CSS</span><span>GSAP</span>
-          </div>
-        </div>
-        <div class="float-card-footer">
-          <a href="#" class="btn btn-primary">View Project</a>
-          <span class="coming-badge">Coming Soon</span>
-        </div>
-      </div>
-
-      <div class="float-card">
-        <div class="float-card-icon">🛒</div>
-        <div class="float-card-body">
-          <h3>Product Showcase</h3>
-          <p>Interactive product display page with image gallery, filter tabs, and hover animations.</p>
-          <div class="project-tags">
-            <span>HTML</span><span>CSS</span><span>JavaScript</span>
-          </div>
-        </div>
-        <div class="float-card-footer">
-          <a href="#" class="btn btn-primary">View Project</a>
-          <span class="coming-badge">Coming Soon</span>
-        </div>
-      </div>
-
-      <div class="float-card">
-        <div class="float-card-icon">☁️</div>
-        <div class="float-card-body">
-          <h3>Weather App</h3>
-          <p>Real-time weather dashboard fetching live data from an API with animated weather icons.</p>
-          <div class="project-tags">
-            <span>JavaScript</span><span>API</span><span>CSS</span>
-          </div>
-        </div>
-        <div class="float-card-footer">
-          <a href="#" class="btn btn-primary">View Project</a>
-          <span class="coming-badge">Coming Soon</span>
-        </div>
-      </div>
-
-    </div>
-  </div>
-
-  <!-- Floating Marquee Banner Row 2 (right scroll) -->
-  <div class="marquee-wrapper marquee-reverse">
-    <div class="marquee-track" id="marquee-2">
-
-      <div class="float-card float-card--outline">
-        <div class="float-card-icon">📋</div>
-        <div class="float-card-body">
-          <h3>Task Manager UI</h3>
-          <p>Drag-and-drop task board with local storage, priority labels, and smooth card animations.</p>
-          <div class="project-tags">
-            <span>JavaScript</span><span>CSS</span><span>LocalStorage</span>
-          </div>
-        </div>
-        <div class="float-card-footer">
-          <a href="#" class="btn btn-primary">View Project</a>
-          <span class="coming-badge">Coming Soon</span>
-        </div>
-      </div>
-
-      <div class="float-card float-card--outline">
-        <div class="float-card-icon">🎬</div>
-        <div class="float-card-body">
-          <h3>3D Hero Section</h3>
-          <p>Full-screen hero with Three.js floating shapes, particle system, and parallax mouse effect.</p>
-          <div class="project-tags">
-            <span>Three.js</span><span>GSAP</span><span>JavaScript</span>
-          </div>
-        </div>
-        <div class="float-card-footer">
-          <a href="#" class="btn btn-primary">View Project</a>
-          <span class="coming-badge">Coming Soon</span>
-        </div>
-      </div>
-
-      <div class="float-card float-card--outline">
-        <div class="float-card-icon">📊</div>
-        <div class="float-card-body">
-          <h3>Dashboard UI</h3>
-          <p>Admin dashboard layout with responsive sidebar, chart placeholders, and card components.</p>
-          <div class="project-tags">
-            <span>HTML</span><span>CSS</span><span>JavaScript</span>
-          </div>
-        </div>
-        <div class="float-card-footer">
-          <a href="#" class="btn btn-primary">View Project</a>
-          <span class="coming-badge">Coming Soon</span>
-        </div>
-      </div>
-
-      <div class="float-card float-card--outline">
-        <div class="float-card-icon">✍️</div>
-        <div class="float-card-body">
-          <h3>Blog Layout</h3>
-          <p>Editorial blog design with reading progress bar, dark mode, and animated post cards.</p>
-          <div class="project-tags">
-            <span>HTML</span><span>CSS</span><span>JavaScript</span>
-          </div>
-        </div>
-        <div class="float-card-footer">
-          <a href="#" class="btn btn-primary">View Project</a>
-          <span class="coming-badge">Coming Soon</span>
-        </div>
-      </div>
-
-      <!-- Duplicate for seamless loop -->
-      <div class="float-card float-card--outline">
-        <div class="float-card-icon">📋</div>
-        <div class="float-card-body">
-          <h3>Task Manager UI</h3>
-          <p>Drag-and-drop task board with local storage, priority labels, and smooth card animations.</p>
-          <div class="project-tags">
-            <span>JavaScript</span><span>CSS</span><span>LocalStorage</span>
-          </div>
-        </div>
-        <div class="float-card-footer">
-          <a href="#" class="btn btn-primary">View Project</a>
-          <span class="coming-badge">Coming Soon</span>
-        </div>
-      </div>
-
-      <div class="float-card float-card--outline">
-        <div class="float-card-icon">🎬</div>
-        <div class="float-card-body">
-          <h3>3D Hero Section</h3>
-          <p>Full-screen hero with Three.js floating shapes, particle system, and parallax mouse effect.</p>
-          <div class="project-tags">
-            <span>Three.js</span><span>GSAP</span><span>JavaScript</span>
-          </div>
-        </div>
-        <div class="float-card-footer">
-          <a href="#" class="btn btn-primary">View Project</a>
-          <span class="coming-badge">Coming Soon</span>
-        </div>
-      </div>
-
-      <div class="float-card float-card--outline">
-        <div class="float-card-icon">📊</div>
-        <div class="float-card-body">
-          <h3>Dashboard UI</h3>
-          <p>Admin dashboard layout with responsive sidebar, chart placeholders, and card components.</p>
-          <div class="project-tags">
-            <span>HTML</span><span>CSS</span><span>JavaScript</span>
-          </div>
-        </div>
-        <div class="float-card-footer">
-          <a href="#" class="btn btn-primary">View Project</a>
-          <span class="coming-badge">Coming Soon</span>
-        </div>
-      </div>
-
-      <div class="float-card float-card--outline">
-        <div class="float-card-icon">✍️</div>
-        <div class="float-card-body">
-          <h3>Blog Layout</h3>
-          <p>Editorial blog design with reading progress bar, dark mode, and animated post cards.</p>
-          <div class="project-tags">
-            <span>HTML</span><span>CSS</span><span>JavaScript</span>
-          </div>
-        </div>
-        <div class="float-card-footer">
-          <a href="#" class="btn btn-primary">View Project</a>
-          <span class="coming-badge">Coming Soon</span>
-        </div>
-      </div>
-
-    </div>
-  </div>
-
-  <p class="projects-note">
-    🚧 &nbsp;More projects coming soon — currently in development.
-  </p>
-
-</section>
-
-    <!-- ═══════════════════════════════════════ -->
     <!--  CONTACT SECTION                       -->
     <!-- ═══════════════════════════════════════ -->
     <section id="contact">
@@ -670,6 +398,32 @@
 </div>
     </section>
 
+<!-- Bottom Navbar (mobile only) -->
+<nav class="bottom-nav">
+  <a href="#hero" class="bottom-nav-item active" id="bn-home">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+      <polyline points="9 22 9 12 15 12 15 22"/>
+    </svg>
+    <span>Home</span>
+  </a>
+  <a href="/projects.html" class="bottom-nav-item" id="bn-projects">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
+      <line x1="8" y1="21" x2="16" y2="21"/>
+      <line x1="12" y1="17" x2="12" y2="21"/>
+    </svg>
+    <span>Projects</span>
+  </a>
+  <a href="#contact" class="bottom-nav-item" id="bn-contact">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+      <polyline points="22,6 12,13 2,6"/>
+    </svg>
+    <span>Contact</span>
+  </a>
+</nav>
+
     <!-- Footer -->
     <footer id="footer">
   <div class="footer-inner">
@@ -724,7 +478,7 @@
     </div>
 
     <div class="footer-bottom">
-      <p>© 2025 <span class="gold">Heritage Digital Tech</span>. All rights reserved.</p>
+      <p>© 2024 <span class="gold">Heritage Digital Tech</span>. All rights reserved.</p>
       <p>Crafted with passion · Available worldwide 🌍</p>
     </div>
 
