@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Projects | Heritage Digital Tech</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+    <link rel="stylesheet" href="/src/style.css" />
+    <link rel="stylesheet" href="/src/polish.css" />
+    <style>
+      body { cursor: default; }
+
+      .projects-page {
+        min-height: 100vh;
+        background: var(--bg);
+        padding: 6rem 2rem 8rem;
+      }
+
+      .projects-page-header {
+        text-align: center;
+        margin-bottom: 3.5rem;
+      }
+
+      .projects-page-header .back-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        color: var(--gold);
+        font-size: 0.85rem;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        font-weight: 600;
+        margin-bottom: 1.5rem;
+        cursor: pointer;
+        transition: gap 0.3s;
+        text-decoration: none;
+      }
+
+      .projects-page-header .back-btn:hover { gap: 0.8rem; }
+
+      .projects-page-header h1 {
+        font-family: 'Playfair Display', serif;
+        font-size: clamp(2rem, 8vw, 4rem);
+        font-weight: 900;
+        color: transparent;
+        -webkit-text-stroke: 1px var(--gold);
+        letter-spacing: 4px;
+        text-transform: uppercase;
+        margin-bottom: 0.8rem;
+      }
+
+      .projects-page-header p {
+        color: var(--grey);
+        font-size: 0.9rem;
+        letter-spacing: 1px;
+      }
+
+      /* Grid */
+      .projects-page-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.8rem;
+        max-width: 900px;
+        margin: 0 auto;
+      }
+
+      /* Flip Cards */
+      .proj-flip-card {
+        height: 320px;
+        perspective: 1200px;
+        cursor: pointer;
+      }
+
+      .proj-flip-inner {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        transform-style: preserve-3d;
+        transition: transform 0.75s cubic-bezier(0.4, 0.2, 0.2, 1);
+      }
+
+      .proj-flip-card:hover .proj-flip-inner,
+      .proj-flip-card.tapped .proj-flip-inner {
+        transform: rotateY(180deg);
+      }
+
+      .proj-front,
+      .proj-back {
+        position: absolute;
+        inset: 0;
+        backface-visibility: hidden;
+        -webkit-backface-visibility: hidden;
+        border-radius: 20px;
+        padding: 1.8rem;
+        border: 1px solid var(--border);
+        display: flex;
+        flex-direction: column;
+        gap: 0.8rem;
+      }
+
+      .proj-front {
+        background: var(--bg-card);
+        justify-content: center;
+      }
+
+      .proj-icon { font-size: 2.2rem; filter: drop-shadow(0 0 10px rgba(255,215,0,0.4)); }
+
+      .proj-front h3 {
+        font-family: 'Playfair Display', serif;
+        font-size: 1.2rem;
+        color: var(--white);
+      }
+
+      .proj-front p {
+        font-size: 0.83rem;
+        color: var(--grey);
+        line-height: 1.7;
+      }
+
+      .proj-hover-hint {
+        margin-top: auto;
+        font-size: 0.7rem;
+        color: var(--gold);
+        letter-spacing: 1px;
+        opacity: 0.7;
+      }
+
+      .proj-back {
+        background: linear-gradient(135deg, #1a1500, #221c00);
+        border-color: rgba(255,215,0,0.3);
+        transform: rotateY(180deg);
+        justify-content: space-between;
+      }
+
+      .proj-back-icon { font-size: 1.4rem; }
+
+      .proj-back h3 {
+        font-family: 'Playfair Display', serif;
+        font-size: 1rem;
+        color: var(--gold);
+      }
+
+      .proj-back p {
+        font-size: 0.78rem;
+        color: var(--grey);
+        line-height: 1.75;
+        flex: 1;
+      }
+
+      .proj-tags {
+        display: flex;
+        gap: 0.4rem;
+        flex-wrap: wrap;
+      }
+
+      .proj-tags span {
+        padding: 0.2rem 0.65rem;
+        border-radius: 50px;
+        border: 1px solid var(--border);
+        font-size: 0.68rem;
+        color: var(--gold);
+        background: rgba(255,215,0,0.05);
+      }
+
+      .proj-back-actions {
+        display: flex;
+        align-items: center;
+        gap: 0.8rem;
+        flex-wrap: wrap;
+        margin-top: 0.4rem;
+      }
+
+      .proj-back-actions .btn {
+        padding: 0.45rem 1.1rem;
+        font-size: 0.72rem;
+        border-radius: 50px;
+        background: var(--gold);
+        color: #121212;
+        font-weight: 700;
+        letter-spacing: 0.5px;
+        text-decoration: none;
+        display: inline-block;
+        transition: transform 0.2s, box-shadow 0.2s;
+      }
+
+      .proj-back-actions .btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(255,215,0,0.3);
+      }
+
+      .coming-badge {
+        font-size: 0.68rem;
+        color: var(--grey);
+        border: 1px dashed rgba(255,215,0,0.2);
+        padding: 0.22rem 0.65rem;
+        border-radius: 50px;
+        letter-spacing: 0.5px;
+      }
+
+      .projects-coming {
+        text-align: center;
+        margin-top: 3rem;
+        padding: 2rem;
+        border: 1px dashed var(--border);
+        border-radius: 16px;
+        max-width: 900px;
+        margin-left: auto;
+        margin-right: auto;
+        color: var(--grey);
+        font-size: 0.85rem;
+        letter-spacing: 1px;
+        margin-top: 2rem;
+      }
+
+      .projects-coming span { color: var(--gold); }
+
+      /* Bottom nav spacing */
+      @media (max-width: 768px) {
+        .projects-page-grid {
+          grid-template-columns: 1fr;
+        }
+        .proj-flip-card { height: 280px; }
+        .projects-page { padding: 5rem 1.2rem 7rem; }
+      }
+    </style>
+  </head>
+
+  <body>
+
+    <!-- Top bar -->
+    <nav id="navbar">
+      <div class="nav-logo">HDT</div>
+      <ul class="nav-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="/#about">About</a></li>
+        <li><a href="/#skills">Skills</a></li>
+        <li><a href="/projects.html" class="active">Projects</a></li>
+        <li><a href="/#contact">Contact</a></li>
+      </ul>
+      <button id="theme-toggle" aria-label="Toggle dark mode">🌙</button>
+    </nav>
+
+    <!-- Projects Page Content -->
+    <div class="projects-page">
+
+      <div class="projects-page-header">
+        <a href="/" class="back-btn">← Back to Home</a>
+        <h1>My Projects</h1>
+        <p>Tap any card to see full details</p>
+      </div>
+
+      <div class="projects-page-grid">
+
+        <!-- Card 1 -->
+        <div class="proj-flip-card" onclick="this.classList.toggle('tapped')">
+          <div class="proj-flip-inner">
+            <div class="proj-front">
+              <div class="proj-icon">🌐</div>
+              <h3>Landing Page</h3>
+              <p>Animated, responsive landing page with hero section and smooth scroll.</p>
+              <div class="proj-tags">
+                <span>HTML</span><span>CSS</span><span>JavaScript</span>
+              </div>
+              <div class="proj-hover-hint">Tap to see more ↗</div>
+            </div>
+            <div class="proj-back">
+              <div class="proj-back-icon">🌐</div>
+              <h3>Landing Page</h3>
+              <p>A fully responsive, mobile-first landing page featuring animated hero text, smooth scroll navigation, CSS transitions, and a clean modern layout — built with vanilla HTML, CSS and JavaScript.</p>
+              <div class="proj-tags">
+                <span>HTML</span><span>CSS</span><span>JavaScript</span>
+              </div>
+              <div class="proj-back-actions">
+                <a href="#" class="btn">View Project</a>
+                <span class="coming-badge">Coming Soon</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="proj-flip-card" onclick="this.classList.toggle('tapped')">
+          <div class="proj-flip-inner">
+            <div class="proj-front">
+              <div class="proj-icon">🎨</div>
+              <h3>Portfolio Template</h3>
+              <p>Clean portfolio layout with dark mode toggle and animated section reveals.</p>
+              <div class="proj-tags">
+                <span>HTML</span><span>CSS</span><span>GSAP</span>
+              </div>
+              <div class="proj-hover-hint">Tap to see more ↗</div>
+            </div>
+            <div class="proj-back">
+              <div class="proj-back-icon">🎨</div>
+              <h3>Portfolio Template</h3>
+              <p>A reusable developer portfolio template featuring dark/light mode toggle, GSAP scroll animations, CSS Grid layout, and a fully responsive design optimised for all screen sizes.</p>
+              <div class="proj-tags">
+                <span>HTML</span><span>CSS</span><span>GSAP</span>
+              </div>
+              <div class="proj-back-actions">
+                <a href="#" class="btn">View Project</a>
+                <span class="coming-badge">Coming Soon</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="proj-flip-card" onclick="this.classList.toggle('tapped')">
+          <div class="proj-flip-inner">
+            <div class="proj-front">
+              <div class="proj-icon">☁️</div>
+              <h3>Weather App</h3>
+              <p>Real-time weather dashboard fetching live data from an API with animated icons.</p>
+              <div class="proj-tags">
+                <span>JavaScript</span><span>API</span><span>CSS</span>
+              </div>
+              <div class="proj-hover-hint">Tap to see more ↗</div>
+            </div>
+            <div class="proj-back">
+              <div class="proj-back-icon">☁️</div>
+              <h3>Weather App</h3>
+              <p>A real-time weather dashboard that fetches live data from a public weather API, displays animated weather icons, temperature, humidity and wind speed with a clean card-based UI.</p>
+              <div class="proj-tags">
+                <span>JavaScript</span><span>API</span><span>CSS</span>
+              </div>
+              <div class="proj-back-actions">
+                <a href="#" class="btn">View Project</a>
+                <span class="coming-badge">Coming Soon</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="proj-flip-card" onclick="this.classList.toggle('tapped')">
+          <div class="proj-flip-inner">
+            <div class="proj-front">
+              <div class="proj-icon">🎬</div>
+              <h3>3D Hero Section</h3>
+              <p>Full-screen hero with Three.js floating shapes and parallax mouse effect.</p>
+              <div class="proj-tags">
+                <span>Three.js</span><span>GSAP</span><span>JavaScript</span>
+              </div>
+              <div class="proj-hover-hint">Tap to see more ↗</div>
+            </div>
+            <div class="proj-back">
+              <div class="proj-back-icon">🎬</div>
+              <h3>3D Hero Section</h3>
+              <p>A stunning full-screen hero built with Three.js featuring floating geometric shapes, a particle system, gold colour palette, mouse-driven parallax effect and smooth GSAP entrance animations.</p>
+              <div class="proj-tags">
+                <span>Three.js</span><span>GSAP</span><span>JavaScript</span>
+              </div>
+              <div class="proj-back-actions">
+                <a href="#" class="btn">View Project</a>
+                <span class="coming-badge">Coming Soon</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="projects-coming">
+        🚧 &nbsp;More projects being built —
+        <span>check back soon!</span>
+      </div>
+
+    </div>
+
+    <!-- Bottom Navbar (mobile) -->
+    <nav class="bottom-nav">
+      <a href="/" class="bottom-nav-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+          <polyline points="9 22 9 12 15 12 15 22"/>
+        </svg>
+        <span>Home</span>
+      </a>
+      <a href="/projects.html" class="bottom-nav-item active">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
+          <line x1="8" y1="21" x2="16" y2="21"/>
+          <line x1="12" y1="17" x2="12" y2="21"/>
+        </svg>
+        <span>Projects</span>
+      </a>
+      <a href="/#contact" class="bottom-nav-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+          <polyline points="22,6 12,13 2,6"/>
+        </svg>
+        <span>Contact</span>
+      </a>
+    </nav>
+
+    <script>
+      // Dark mode toggle
+      const toggle = document.getElementById('theme-toggle');
+      const html   = document.documentElement;
+      let isDark   = true;
+      toggle.addEventListener('click', () => {
+        isDark = !isDark;
+        html.setAttribute('data-theme', isDark ? 'dark' : 'light');
+        toggle.textContent = isDark ? '🌙' : '☀️';
+      });
+    </script>
+
+  </body>
+</html>
