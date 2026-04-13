@@ -1335,16 +1335,3 @@ section {
   background: var(--gold);
   box-shadow: 0 0 6px var(--gold);
 }
-
-/* Projects button — gold highlight */
-.bottom-nav-item#bn-projects,
-.bottom-nav-item[href="/projects.html"] {
-  background: rgba(255, 215, 0, 0.08);
-  border: 1px solid rgba(255, 215, 0, 0.2);
-  color: var(--gold);
-}
-
-.bottom-nav-item#bn-projects svg,
-.bottom-nav-item[href="/projects.html"] svg {
-  stroke: var(--gold);
-}

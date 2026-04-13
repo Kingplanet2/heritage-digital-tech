@@ -224,6 +224,199 @@
         .proj-flip-card { height: 280px; }
         .projects-page { padding: 5rem 1.2rem 7rem; }
       }
+/* ── Full Project Cards (WigMart & BelleFood) ── */
+.proj-card-full {
+  grid-column: 1 / -1;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.proj-card-full:hover {
+  border-color: rgba(255,215,0,0.4);
+  box-shadow: 0 20px 60px rgba(255,215,0,0.1);
+}
+
+/* Image side */
+.proj-card-img {
+  position: relative;
+  min-height: 280px;
+  overflow: hidden;
+}
+
+.proj-card-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.6s ease;
+}
+
+.proj-card-full:hover .proj-card-img img {
+  transform: scale(1.05);
+}
+
+/* BelleFood placeholder */
+.proj-card-img--bellefood {
+  background: linear-gradient(135deg, #1a0a00, #2d1500);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.proj-card-img-placeholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  z-index: 1;
+}
+
+.proj-emoji {
+  font-size: 4rem;
+  filter: drop-shadow(0 0 20px rgba(255,215,0,0.4));
+}
+
+.proj-img-label {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.4rem;
+  font-weight: 900;
+  color: var(--gold);
+  letter-spacing: 3px;
+}
+
+/* Overlay badges */
+.proj-card-overlay {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  z-index: 2;
+}
+
+.proj-live-badge {
+  display: inline-block;
+  padding: 0.25rem 0.7rem;
+  background: rgba(0,0,0,0.7);
+  border: 1px solid rgba(255,215,0,0.3);
+  border-radius: 50px;
+  font-size: 0.68rem;
+  color: var(--gold);
+  letter-spacing: 0.5px;
+  backdrop-filter: blur(8px);
+}
+
+.proj-real-badge {
+  border-color: rgba(40,200,100,0.4);
+  color: #28c840;
+}
+
+/* Content side */
+.proj-card-content {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.proj-card-top h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5rem;
+  color: var(--white);
+  margin-bottom: 0.2rem;
+}
+
+.proj-card-sub {
+  font-size: 0.75rem;
+  color: var(--gold);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.proj-card-desc {
+  font-size: 0.82rem;
+  color: var(--grey);
+  line-height: 1.8;
+}
+
+/* Feature pills */
+.proj-features {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.proj-features span {
+  font-size: 0.72rem;
+  padding: 0.25rem 0.7rem;
+  background: rgba(255,215,0,0.06);
+  border: 1px solid rgba(255,215,0,0.15);
+  border-radius: 50px;
+  color: var(--white);
+}
+
+/* Action buttons */
+.proj-card-actions {
+  display: flex;
+  gap: 0.8rem;
+  flex-wrap: wrap;
+  margin-top: 0.5rem;
+}
+
+.proj-card-actions .btn {
+  padding: 0.55rem 1.3rem;
+  font-size: 0.78rem;
+  border-radius: 50px;
+  text-decoration: none;
+  display: inline-block;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.proj-card-actions .btn-primary {
+  background: var(--gold);
+  color: #121212;
+}
+
+.proj-card-actions .btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(255,215,0,0.3);
+}
+
+.proj-card-actions .btn-outline {
+  background: transparent;
+  color: var(--white);
+  border: 1px solid var(--border);
+}
+
+.proj-card-actions .btn-outline:hover {
+  border-color: var(--gold);
+  color: var(--gold);
+  transform: translateY(-2px);
+}
+
+/* Mobile responsive */
+@media (max-width: 600px) {
+  .proj-card-full {
+    grid-template-columns: 1fr;
+  }
+
+  .proj-card-img { min-height: 200px; }
+
+  .proj-card-content { padding: 1.5rem; }
+
+  .proj-card-top h3 { font-size: 1.2rem; }
+}
+
     </style>
   </head>
 
@@ -231,7 +424,7 @@
 
     <!-- Top bar -->
     <nav id="navbar">
-      <div class="nav-logo">HDT</div>
+      <div class="nav-logo">HERITAGE DIGITALS</div>
       <ul class="nav-links">
         <li><a href="/">Home</a></li>
         <li><a href="/#about">About</a></li>
@@ -243,132 +436,150 @@
     </nav>
 
     <!-- Projects Page Content -->
-    <div class="projects-page">
+    <div class="projects-page-grid">
 
-      <div class="projects-page-header">
-        <a href="/" class="back-btn">← Back to Home</a>
-        <h1>My Projects</h1>
-        <p>Tap any card to see full details</p>
+  <!-- WigMart -->
+  <div class="proj-card-full">
+    <div class="proj-card-img">
+      <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=800&q=80"
+           alt="WigMart" />
+      <div class="proj-card-overlay">
+        <span class="proj-live-badge">🟢 Live</span>
       </div>
-
-      <div class="projects-page-grid">
-
-        <!-- Card 1 -->
-        <div class="proj-flip-card" onclick="this.classList.toggle('tapped')">
-          <div class="proj-flip-inner">
-            <div class="proj-front">
-              <div class="proj-icon">🌐</div>
-              <h3>Landing Page</h3>
-              <p>Animated, responsive landing page with hero section and smooth scroll.</p>
-              <div class="proj-tags">
-                <span>HTML</span><span>CSS</span><span>JavaScript</span>
-              </div>
-              <div class="proj-hover-hint">Tap to see more ↗</div>
-            </div>
-            <div class="proj-back">
-              <div class="proj-back-icon">🌐</div>
-              <h3>Landing Page</h3>
-              <p>A fully responsive, mobile-first landing page featuring animated hero text, smooth scroll navigation, CSS transitions, and a clean modern layout — built with vanilla HTML, CSS and JavaScript.</p>
-              <div class="proj-tags">
-                <span>HTML</span><span>CSS</span><span>JavaScript</span>
-              </div>
-              <div class="proj-back-actions">
-                <a href="#" class="btn">View Project</a>
-                <span class="coming-badge">Coming Soon</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Card 2 -->
-        <div class="proj-flip-card" onclick="this.classList.toggle('tapped')">
-          <div class="proj-flip-inner">
-            <div class="proj-front">
-              <div class="proj-icon">🎨</div>
-              <h3>Portfolio Template</h3>
-              <p>Clean portfolio layout with dark mode toggle and animated section reveals.</p>
-              <div class="proj-tags">
-                <span>HTML</span><span>CSS</span><span>GSAP</span>
-              </div>
-              <div class="proj-hover-hint">Tap to see more ↗</div>
-            </div>
-            <div class="proj-back">
-              <div class="proj-back-icon">🎨</div>
-              <h3>Portfolio Template</h3>
-              <p>A reusable developer portfolio template featuring dark/light mode toggle, GSAP scroll animations, CSS Grid layout, and a fully responsive design optimised for all screen sizes.</p>
-              <div class="proj-tags">
-                <span>HTML</span><span>CSS</span><span>GSAP</span>
-              </div>
-              <div class="proj-back-actions">
-                <a href="#" class="btn">View Project</a>
-                <span class="coming-badge">Coming Soon</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Card 3 -->
-        <div class="proj-flip-card" onclick="this.classList.toggle('tapped')">
-          <div class="proj-flip-inner">
-            <div class="proj-front">
-              <div class="proj-icon">☁️</div>
-              <h3>Weather App</h3>
-              <p>Real-time weather dashboard fetching live data from an API with animated icons.</p>
-              <div class="proj-tags">
-                <span>JavaScript</span><span>API</span><span>CSS</span>
-              </div>
-              <div class="proj-hover-hint">Tap to see more ↗</div>
-            </div>
-            <div class="proj-back">
-              <div class="proj-back-icon">☁️</div>
-              <h3>Weather App</h3>
-              <p>A real-time weather dashboard that fetches live data from a public weather API, displays animated weather icons, temperature, humidity and wind speed with a clean card-based UI.</p>
-              <div class="proj-tags">
-                <span>JavaScript</span><span>API</span><span>CSS</span>
-              </div>
-              <div class="proj-back-actions">
-                <a href="#" class="btn">View Project</a>
-                <span class="coming-badge">Coming Soon</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Card 4 -->
-        <div class="proj-flip-card" onclick="this.classList.toggle('tapped')">
-          <div class="proj-flip-inner">
-            <div class="proj-front">
-              <div class="proj-icon">🎬</div>
-              <h3>3D Hero Section</h3>
-              <p>Full-screen hero with Three.js floating shapes and parallax mouse effect.</p>
-              <div class="proj-tags">
-                <span>Three.js</span><span>GSAP</span><span>JavaScript</span>
-              </div>
-              <div class="proj-hover-hint">Tap to see more ↗</div>
-            </div>
-            <div class="proj-back">
-              <div class="proj-back-icon">🎬</div>
-              <h3>3D Hero Section</h3>
-              <p>A stunning full-screen hero built with Three.js featuring floating geometric shapes, a particle system, gold colour palette, mouse-driven parallax effect and smooth GSAP entrance animations.</p>
-              <div class="proj-tags">
-                <span>Three.js</span><span>GSAP</span><span>JavaScript</span>
-              </div>
-              <div class="proj-back-actions">
-                <a href="#" class="btn">View Project</a>
-                <span class="coming-badge">Coming Soon</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-      </div>
-
-      <div class="projects-coming">
-        🚧 &nbsp;More projects being built —
-        <span>check back soon!</span>
-      </div>
-
     </div>
+    <div class="proj-card-content">
+      <div class="proj-card-top">
+        <h3>WigMart</h3>
+        <p class="proj-card-sub">Premium E-Commerce Frontend</p>
+      </div>
+      <p class="proj-card-desc">
+        A production-quality wig store built with React 19 and TypeScript.
+        Features 3D hero animations, virtual AR try-on via DeepAR, AI live
+        chat, real-time search, full cart and checkout flow, wishlist,
+        voucher system, and a glassmorphic bottom nav. Fully responsive.
+      </p>
+      <div class="proj-features">
+        <span>🪞 AR Try-On</span>
+        <span>🤖 AI Chat</span>
+        <span>🛒 Full Cart</span>
+        <span>💱 Currency Toggle</span>
+      </div>
+      <div class="proj-tags">
+        <span>React 19</span><span>TypeScript</span><span>Vite</span>
+        <span>Tailwind CSS</span><span>Zustand</span><span>DeepAR</span>
+      </div>
+      <div class="proj-card-actions">
+        <a href="https://wigmart.vercel.app" target="_blank" class="btn btn-primary">
+          🌐 View Live
+        </a>
+        <a href="https://github.com/Kingplanet2/wigmart" target="_blank" class="btn btn-outline">
+          GitHub
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- BelleFood -->
+  <div class="proj-card-full">
+    <div class="proj-card-img proj-card-img--bellefood">
+      <div class="proj-card-img-placeholder">
+        <span class="proj-emoji">🍽️</span>
+        <span class="proj-img-label">Belle Food</span>
+      </div>
+      <div class="proj-card-overlay">
+        <span class="proj-live-badge">🟢 Live</span>
+        <span class="proj-live-badge proj-real-badge">🏢 Real Brand</span>
+      </div>
+    </div>
+    <div class="proj-card-content">
+      <div class="proj-card-top">
+        <h3>Belle Food</h3>
+        <p class="proj-card-sub">Full Stack Food Ordering App</p>
+      </div>
+      <p class="proj-card-desc">
+        A premium full-stack food ordering app built for Belle Food — a real
+        Nigerian food brand based in Lagos with 42.6K Instagram followers.
+        Features Paystack payments, real-time order tracking, and a protected
+        admin dashboard with live order management, price editing and
+        Cloudinary image uploads.
+      </p>
+      <div class="proj-features">
+        <span>💳 Paystack</span>
+        <span>📦 Order Tracking</span>
+        <span>🔐 Admin Dashboard</span>
+        <span>☁️ Cloudinary</span>
+      </div>
+      <div class="proj-tags">
+        <span>HTML</span><span>CSS</span><span>JavaScript</span>
+        <span>Node.js</span><span>Express</span><span>MongoDB</span>
+        <span>GSAP</span><span>Paystack</span>
+      </div>
+      <div class="proj-card-actions">
+        <a href="https://bellefood1.vercel.app" target="_blank" class="btn btn-primary">
+          🌐 View Live
+        </a>
+        <a href="https://github.com/Kingplanet2/bellefood" target="_blank" class="btn btn-outline">
+          GitHub
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Landing Page -->
+  <div class="proj-flip-card" onclick="this.classList.toggle('tapped')">
+    <div class="proj-flip-inner">
+      <div class="proj-front">
+        <div class="proj-icon">🌐</div>
+        <h3>Landing Page</h3>
+        <p>Animated, responsive landing page with hero section and smooth scroll.</p>
+        <div class="proj-tags">
+          <span>HTML</span><span>CSS</span><span>JavaScript</span>
+        </div>
+        <div class="proj-hover-hint">Tap to see more ↗</div>
+      </div>
+      <div class="proj-back">
+        <div class="proj-back-icon">🌐</div>
+        <h3>Landing Page</h3>
+        <p>A fully responsive, mobile-first landing page featuring animated hero text, smooth scroll navigation, CSS transitions, and a clean modern layout.</p>
+        <div class="proj-tags">
+          <span>HTML</span><span>CSS</span><span>JavaScript</span>
+        </div>
+        <div class="proj-back-actions">
+          <a href="#" class="btn">View Project</a>
+          <span class="coming-badge">Coming Soon</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 3D Hero Section -->
+  <div class="proj-flip-card" onclick="this.classList.toggle('tapped')">
+    <div class="proj-flip-inner">
+      <div class="proj-front">
+        <div class="proj-icon">🎬</div>
+        <h3>3D Hero Section</h3>
+        <p>Full-screen hero with Three.js floating shapes and parallax mouse effect.</p>
+        <div class="proj-tags">
+          <span>Three.js</span><span>GSAP</span><span>JavaScript</span>
+        </div>
+        <div class="proj-hover-hint">Tap to see more ↗</div>
+      </div>
+      <div class="proj-back">
+        <div class="proj-back-icon">🎬</div>
+        <h3>3D Hero Section</h3>
+        <p>A stunning full-screen hero built with Three.js featuring floating geometric shapes, a particle system, gold colour palette, and smooth GSAP entrance animations.</p>
+        <div class="proj-tags">
+          <span>Three.js</span><span>GSAP</span><span>JavaScript</span>
+        </div>
+        <div class="proj-back-actions">
+          <a href="#" class="btn">View Project</a>
+          <span class="coming-badge">Coming Soon</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
 
     <!-- Bottom Navbar (mobile) -->
     <nav class="bottom-nav">
